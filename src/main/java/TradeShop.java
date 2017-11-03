@@ -11,17 +11,27 @@ public class TradeShop {
     public void addFruits(String pathToJsonFile){
 
         try {
-            Scanner scanner = new Scanner(new File(pathToJsonFile));
+            String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
+            
+            Fruit fruitObject = JSON.parseObject(json, Fruit.class);
+
+            fruitStorage.add(fruitObject);
+            /*Scanner scanner = new Scanner(new File(pathToJsonFile));
             String json = scanner.toString();
             while (scanner.hasNextLine()){
-                fruitStorage=  new Fruit(JSON.parse(json))
+                fru*/
 
+            } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
         }
+
+    public void save(String pathToJsonFile){
+
+    }
 
         //JSON.to
 
-    }
+
 }
