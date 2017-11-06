@@ -12,9 +12,11 @@ import java.util.Scanner;
 
 public class TradeShop {
     private ArrayList<Fruit> fruitStorage;
+    private int wallet;
 
     public TradeShop() {
         fruitStorage = new ArrayList<>();
+        wallet = 0;
     }
 
     public ArrayList<Fruit> getFruitStorage() {
@@ -26,13 +28,7 @@ public class TradeShop {
     }
 
     public void addFruits(String pathToJsonFile) {
-
-        try {
-            String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
-            fruitStorage = new ArrayList<>(JSON.parseArray(json, Fruit.class));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        this.fruitStorage = loadFromJson(pathToJsonFile);
     }
 
     public void save(String pathToJsonFile) {
@@ -129,6 +125,22 @@ public class TradeShop {
             }
         }
         return addedAtDay;
+    }
+
+    public void sell(String pathToJsonFile){
+        ArrayList<Fruit>order = loadFromJson(pathToJsonFile);
+    }
+
+    public ArrayList<Fruit> loadFromJson(String pathToJsonFile){
+        ArrayList<Fruit> loadedFruits;
+        try {
+            String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
+            loadedFruits= new ArrayList<>(JSON.parseArray(json, Fruit.class));
+            return loadedFruits;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public void show(ArrayList<Fruit> fruits) {
