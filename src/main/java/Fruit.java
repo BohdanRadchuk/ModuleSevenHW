@@ -2,13 +2,13 @@ import java.util.Date;
 
 public class Fruit {
     private FruitType fruitType;
-    private int expirationDate;
+    private int expirationDays;
     private Date incomeDate ;
     private int price;
 
-    public Fruit(FruitType fruitType, int expirationDate, Date incomeDate, int price) {
+    public Fruit(FruitType fruitType, int expirationDays, Date incomeDate, int price) {
         this.fruitType = fruitType;
-        this.expirationDate = expirationDate;
+        this.expirationDays = expirationDays;
         this.incomeDate = incomeDate;
         this.price = price;
     }
@@ -22,12 +22,12 @@ public class Fruit {
         this.fruitType = fruitType;
     }
 
-    public int getExpirationDate() {
-        return expirationDate;
+    public int getExpirationDays() {
+        return expirationDays;
     }
 
-    public void setExpirationDate(int expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setExpirationDays(int expirationDays) {
+        this.expirationDays = expirationDays;
     }
 
     public Date getIncomeDate() {
@@ -50,7 +50,7 @@ public class Fruit {
     public String toString() {
         return "Fruit{" +
                 "fruitType=" + fruitType +
-                ", expirationDate=" + expirationDate +
+                ", expirationDays=" + expirationDays +
                 ", incomeDate=" + incomeDate +
                 ", price=" + price +
                 '}';
