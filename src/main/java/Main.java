@@ -37,10 +37,7 @@ public class Main {
         System.out.println("-----------------------------------");
         System.out.println("all fruits added at "+ date);
         shop.show(shop.getAddedFruits(date));
-        System.out.println("-----------------------------------");
         System.out.println("Fruits type added at "+ date);
         shop.show(shop.getAddedFruits(date,FruitType.pineapple));
-
-
     }
 }
