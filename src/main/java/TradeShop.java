@@ -131,6 +131,28 @@ public class TradeShop {
         return date1;
     }
 
+    public ArrayList<Fruit> getAddedFruits(Date date){
+        ArrayList<Fruit> addedAtDay = new ArrayList();
+        for (int i  = 0; i<fruitStorage.size(); i++){
+            if (fruitStorage.get(i).getIncomeDate().compareTo(date)==0){
+                addedAtDay.add(fruitStorage.get(i));
+            }
+        }
+        return addedAtDay;
+    }
+
+    public ArrayList<Fruit> getAddedFruits(Date date,FruitType fruitType){
+        ArrayList<Fruit> addedAtDay = new ArrayList();
+        for (int i  = 0; i<fruitStorage.size(); i++){
+            if (fruitStorage.get(i).getFruitType()==fruitType) {
+                if (fruitStorage.get(i).getIncomeDate().compareTo(date) == 0) {
+                    addedAtDay.add(fruitStorage.get(i));
+                }
+            }
+        }
+        return addedAtDay;
+    }
+
     public void show (ArrayList<Fruit> fruits){
         for (Object furit:fruits
              ) {

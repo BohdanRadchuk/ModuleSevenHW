@@ -23,14 +23,23 @@ public class Main {
        // shop.show(shop.getFruitStorage());
 
         Date spoilDate = new Date(2017, 11, 25);
+        System.out.println("-----------------------------------");
         System.out.println("Spoiled fruits to date" + spoilDate);
         shop.getSpoiledFruits(spoilDate);
         System.out.println("spoiled fruit type to date " + spoilDate);
         shop.getSpoiledFruits(spoilDate, FruitType.banana);
+        System.out.println("-----------------------------------");
         System.out.println("fruits available to sell: ");
         shop.show(shop.getAvailableFruits(spoilDate));
         System.out.println("fruit type available to sell: ");
         shop.show(shop.getAvailableFruits(spoilDate, FruitType.apple));
+
+        System.out.println("-----------------------------------");
+        System.out.println("all fruits added at "+ date);
+        shop.show(shop.getAddedFruits(date));
+        System.out.println("-----------------------------------");
+        System.out.println("Fruits type added at "+ date);
+        shop.show(shop.getAddedFruits(date,FruitType.pineapple));
 
 
     }
