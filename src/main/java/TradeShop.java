@@ -1,11 +1,14 @@
 import com.alibaba.fastjson.JSON;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class TradeShop {
     private ArrayList<Fruit> fruitStorage;
@@ -22,25 +25,26 @@ public class TradeShop {
         fruitStorage = new ArrayList<>();
     }
 
-    /*public void addFruits(String pathToJsonFile){
+    public void addFruits(String pathToJsonFile){
+
+
 
         try {
             String json = new Scanner(new File(pathToJsonFile)).useDelimiter("\\Z").next();
-            
-            Fruit fruitObject = JSON.parseObject(json, Fruit.class);
 
-            fruitStorage.add(fruitObject);
-            *//*Scanner scanner = new Scanner(new File(pathToJsonFile));
-            String json = scanner.toString();
-            while (scanner.hasNextLine()){
-                fru*//*
 
-            } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
-            }
+            fruitStorage =  new ArrayList<>(JSON.parseArray(json,Fruit.class));
+             //temp= JSON.parseObject(json, TradeShop.class );
+
+            //fruitStorage.add(fruitObject);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
 
         }
-*/
     public void save(String pathToJsonFile) {
         try {
             FileWriter writer = new FileWriter(pathToJsonFile);

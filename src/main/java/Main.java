@@ -7,10 +7,10 @@ public class Main {
         TradeShop shop = new TradeShop();
 
         Date date= new Date(2017, 10, 20);
-        //shop.addFruits("files/JSONtoLoad.json");
+        shop.addFruits("files/JSONtoLoad.json");
+        shop.show(shop.getFruitStorage());
 
-
-        Fruit fruit1 = new Fruit(FruitType.banana, 20, date, 20);
+       /* Fruit fruit1 = new Fruit(FruitType.banana, 20, date, 20);
         Fruit fruit2 = new Fruit(FruitType.orange, 21, date, 30);
         date = new Date(2017, 10, 23);
         Fruit fruit3 = new Fruit(FruitType.apple, 30, date, 25);
@@ -20,7 +20,7 @@ public class Main {
         shop.setNewFruit(fruit3);
         shop.setNewFruit(fruit4);
         shop.save("files/SavedJSON.json");
-       // shop.show(shop.getFruitStorage());
+        shop.show(shop.getFruitStorage());*/
 
         Date spoilDate = new Date(2017, 11, 25);
         System.out.println("-----------------------------------");
