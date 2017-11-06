@@ -2,11 +2,25 @@ import com.alibaba.fastjson.JSON;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TradeShop {
-    ArrayList<Fruit> fruitStorage = new ArrayList<>();
+    private ArrayList<Fruit> fruitStorage;
+
+    public ArrayList<Fruit> getFruitStorage() {
+        return fruitStorage;
+    }
+
+    public void setNewFruit(Fruit fruit) {
+        this.fruitStorage.add(fruit);
+    }
+
+    public TradeShop() {
+        fruitStorage  = new ArrayList<>();
+    }
 
     public void addFruits(String pathToJsonFile){
 
@@ -28,10 +42,27 @@ public class TradeShop {
         }
 
     public void save(String pathToJsonFile){
+        try {
+            FileWriter writer = new FileWriter(pathToJsonFile);
+            String json = JSON.toJSONString(fruitStorage);
+            writer.write(json);
+
+
+
+
+            writer.flush();
+            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
-
-        //JSON.to
-
+    public void show (){
+        for (Object furit:fruitStorage
+             ) {
+            System.out.println(furit);
+        }
+    }
 
 }

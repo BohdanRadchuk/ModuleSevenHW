@@ -3,7 +3,7 @@ import java.util.Date;
 public class Fruit {
     private FruitType fruitType;
     private int expirationDate;
-    private Date incomeDate;
+    private Date incomeDate ;
     private int price;
 
     public Fruit(FruitType fruitType, int expirationDate, Date incomeDate, int price) {
@@ -12,6 +12,7 @@ public class Fruit {
         this.incomeDate = incomeDate;
         this.price = price;
     }
+
 
     public FruitType getFruitType() {
         return fruitType;
@@ -43,5 +44,15 @@ public class Fruit {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Fruit{" +
+                "fruitType=" + fruitType +
+                ", expirationDate=" + expirationDate +
+                ", incomeDate=" + incomeDate +
+                ", price=" + price +
+                '}';
     }
 }
