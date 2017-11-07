@@ -49,7 +49,7 @@ public class TradeShop {
     }
 
     public void loadClients (String pathToJsonFile) {
-        JSONArray jsonMainArr = loadFromJson(pathToJsonFile).getJSONArray(pathToJsonFile);
+        
        this.clients = JSON.parseObject (loadFromJson(pathToJsonFile), Clients.class);
     }
 
