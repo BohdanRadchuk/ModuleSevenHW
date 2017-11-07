@@ -16,13 +16,17 @@ public class TradeShop {
     private int moneyBalance;
     public Clients clients;
 
+    public Clients getClients() {
+        return clients;
+    }
 
+    public void setClients(Clients clients) {
+        this.clients = clients;
+    }
 
     public TradeShop() {
         this.fruitStorage = new ArrayList<>();
-
         this.moneyBalance = 0;
-
     }
 
     public ArrayList<Fruit> getFruitStorage() {
@@ -32,8 +36,6 @@ public class TradeShop {
     public void setNewFruit(Fruit fruit) {
         this.fruitStorage.add(fruit);
     }
-
-
 
     public int getMoneyBalance() {
         return moneyBalance;
@@ -48,10 +50,10 @@ public class TradeShop {
         this.fruitStorage = new ArrayList<>(JSON.parseArray(loadFromJson(pathToJsonFile), Fruit.class));
     }
 
-    public void loadClients (String pathToJsonFile) {
-        
+    /*public void loadClients (String pathToJsonFile) {                                 //not working
+
        this.clients = JSON.parseObject (loadFromJson(pathToJsonFile), Clients.class);
-    }
+    }*/
 
     public void save(String pathToJsonFile, Object object) {
         try {
@@ -149,13 +151,31 @@ public class TradeShop {
         return addedAtDay;
     }
 
-  /*  public void sell(String pathToJsonFile) {
-        ArrayList<Fruit> order = loadFromJson(pathToJsonFile);
-        ArrayList<Fruit> check = new ArrayList<>();
-        ArrayList<Integer> fruitStorageMatchIndex = new ArrayList<>();
-        for (Fruit orderfruit : order
-                ) {
-            for (int i = 0; i < fruitStorage.size(); i++) {
+    public void sell(ArrayList<Client> clients) {
+
+
+
+        for (int i = 0; i<clients.size(); i++) {
+            ArrayList<Integer> fruitStorageMatchIndex = new ArrayList<>();
+            int count = 0;
+
+            for (int j = 0; j < fruitStorage.size(); j++) {
+                if (clients.get(i).getFruitType() == fruitStorage.get(j).getFruitType()) {
+                    count++;
+                    fruitStorageMatchIndex.add(j);
+                }
+            }
+            if (count >= clients.get(i).getCount()) {
+                for (int k = fruitStorageMatchIndex.size() - 1; k >= 0; k--) {
+
+                    setMoneyBalance(fruitStorage.get(fruitStorageMatchIndex.get(k)).getPrice());
+                    fruitStorage.remove(fruitStorageMatchIndex.get(k));
+                    clients.remove(i);
+                }
+            }
+        }
+
+           /* for (int i = 0; i < fruitStorage.size(); i++) {
                 if (orderfruit.equals(fruitStorage.get(i))) {
                     check.add(fruitStorage.get(i));
                     fruitStorageMatchIndex.add(i);
@@ -173,8 +193,8 @@ public class TradeShop {
                 }
             }
 
-        }
-    }*/
+        }*/
+    }
 
     public String loadFromJson( String pathToJsonFile){
 

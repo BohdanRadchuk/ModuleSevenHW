@@ -1,23 +1,31 @@
 import java.util.ArrayList;
 
-public class Clients<T> {
+public class Clients {
 
 
-    private ArrayList<T> clients = new ArrayList<>();
+    private ArrayList<Client> clients = new ArrayList<>();
 
 
-    public Clients(ArrayList<T> arrayList) {
-        this.clients = arrayList;
+    public Clients(){}
+
+    /*public Clients(ArrayList<Client> client) {
+        this.clients = client;
+    }*/
+    public FruitType getFruitType(int i){
+        return clients.get(i).getFruitType();
+    }
+    public int getCount(int i){
+        return clients.get(i).getCount();
     }
 
 
 
-    public ArrayList<T> getClients() {
+    public ArrayList<Client> getClients() {
         return clients;
     }
 
-    public void setClients(ArrayList<T> clients) {
-        this.clients = clients;
+    public void setClients(Client client ) {
+        this.clients.add(client);
     }
 
     @Override

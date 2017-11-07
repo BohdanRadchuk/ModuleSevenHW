@@ -7,16 +7,10 @@ public class Main {
         Date date= new Date(2017, 10, 20);
         //shop.addFruits("files/JSONtoLoad.json");
         shop.show(shop.getFruitStorage());
-        shop.loadClients("files/order1");
+        /*shop.loadClients("files/order1");                   //not working
         System.out.println(shop.clients);
-        shop.save("files/myClient", shop.clients);
-        /*Clients clients = new Clients();
-        clients.addClient("вфыв", FruitType.banana,1);
-        clients.addClient("вфыв", FruitType.banana,1);
-        clients.addClient("вфыв", FruitType.banana,1);
-        shop.save("files/myClient", clients);*/
-        //System.out.println(shop.getClients());
-        //shop.sell("files/order");
+        shop.save("files/myClient", shop.clients);*/
+
 
        Fruit fruit1 = new Fruit(FruitType.banana, 20, date, 20);
         Fruit fruit2 = new Fruit(FruitType.cherry, 21, date, 30);
@@ -29,6 +23,20 @@ public class Main {
         shop.setNewFruit(fruit4);
         shop.save("files/SavedJSON.json",shop.getFruitStorage());
         shop.show(shop.getFruitStorage());
+
+        Client client = new Client("Вася",FruitType.apple,100);
+        Client client1 = new Client("Джон",FruitType.apple,500);
+        Client client2 = new Client("Джон",FruitType.banana,1);
+        Clients clients = new Clients();
+
+        clients.setClients(client);
+        clients.setClients(client1);
+        clients.setClients(client2);
+        shop.save("files/myClient", clients);
+        System.out.println(shop.getClients());
+        shop.sell(clients.getClients());
+        shop.show(shop.getFruitStorage());
+
 
         Date spoilDate = new Date(2017, 11, 25);
         System.out.println("-----------------------------------");
