@@ -3,7 +3,7 @@ public class Client {
     private FruitType fruitType;
     private String name;
 
-    public Client(int count, FruitType fruitType,String name ) {
+    public Client(int count, FruitType fruitType, String name) {
         this.count = count;
         this.fruitType = fruitType;
         this.name = name;

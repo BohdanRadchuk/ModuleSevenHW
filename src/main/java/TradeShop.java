@@ -31,7 +31,7 @@ public class TradeShop {
         return moneyBalance;
     }
 
-    public void setMoneyBalance( int price) {
+    public void setMoneyBalance(int price) {
         this.moneyBalance += price;
     }
 
@@ -40,9 +40,9 @@ public class TradeShop {
         //this.fruitStorage = new ArrayList<>(JSON.parseArray(loadFromJson(pathToJsonFile), Fruit.class));                     //перезаписывание магазина
     }
 
-    public Clients loadClients (String pathToJsonFile) {                                 //not working
+    public Clients loadClients(String pathToJsonFile) {                                 //not working
 
-        return JSON.parseObject (loadFromJson(pathToJsonFile), Clients.class);
+        return JSON.parseObject(loadFromJson(pathToJsonFile), Clients.class);
     }
 
     public void save(String pathToJsonFile, Object object) {                     //сохранение объекта в JSON формате в файл

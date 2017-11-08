@@ -3,7 +3,7 @@ import java.util.Date;
 public class Fruit {
     private FruitType fruitType;
     private int expirationDays;
-    private Date incomeDate ;
+    private Date incomeDate;
     private int price;
 
     public Fruit(FruitType fruitType, int expirationDays, Date incomeDate, int price) {
