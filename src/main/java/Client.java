@@ -1,20 +1,20 @@
 public class Client {
-    private String name;
-    private FruitType fruitType;
     private int count;
+    private FruitType fruitType;
+    private String name;
 
-    public Client(String name, FruitType fruitType, int count) {
-        this.name = name;
-        this.fruitType = fruitType;
+    public Client(int count, FruitType fruitType,String name ) {
         this.count = count;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+        this.fruitType = fruitType;
         this.name = name;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public FruitType getFruitType() {
@@ -25,12 +25,12 @@ public class Client {
         this.fruitType = fruitType;
     }
 
-    public int getCount() {
-        return count;
+    public String getName() {
+        return name;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

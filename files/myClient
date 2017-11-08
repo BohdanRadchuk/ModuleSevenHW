@@ -1,1 +1,1 @@
-{"clients":[{"count":100,"fruitType":"apple","name":"Вася"},{"count":500,"fruitType":"apple","name":"Джон"},{"count":1,"fruitType":"banana","name":"Джон"}]}
+{"clients":[{"count":1,"fruitType":"apple","name":"Вася"},{"count":500,"fruitType":"apple","name":"Джон"},{"count":2,"fruitType":"banana","name":"Джон"}]}
