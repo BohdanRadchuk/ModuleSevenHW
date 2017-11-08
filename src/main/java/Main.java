@@ -1,4 +1,4 @@
-import java.util.Date;
+﻿import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,12 +51,12 @@ public class Main {
         System.out.println("вывод всех НЕ испорченых фруктов по компании к дате:" + spoilDate);
         shop.show(company.getAvailableFruits(spoilDate));
 
-        company.save("files/SavedJSONcompany.json");
         clients.addClients(new Client(2, FruitType.pineapple, "Вася"));
         company.getTradeShop(0).sell(clients.getClients());
         System.out.println("--------selling 2 pineapples from shop 0---------");
         shop.show(company.getCompany());
         System.out.println("New company money balance = " + company.getCompanyBalance());
+ 	company.save("files/SavedJSONcompany.json");
 
         System.out.println("-----------------------------------");
         System.out.println("Spoiled fruits to date" + spoilDate);
