@@ -5,9 +5,9 @@ public class Main {
         TradeShop shop = new TradeShop();
 
         Date date= new Date(2017, 10, 20);
-        /*shop.loadClients("files/order1");                   //not working
-        System.out.println(shop.clients);
-        shop.save("files/myClient", shop.clients);*/
+        /*Clients clients1 = shop.loadClients("files/order1");                   //not working
+        System.out.println(clients1);
+        shop.save("files/myClient", clients1);*/
         Fruit fruit1 = new Fruit(FruitType.banana, 20, date, 20);
         Fruit fruit2 = new Fruit(FruitType.cherry, 21, date, 30);
         date = new Date(2017, 10, 23);
@@ -34,7 +34,7 @@ public class Main {
 
         shop.sell(clients.getClients());
         System.out.println("Money = " + shop.getMoneyBalance());
-        //shop.save("files/SavedJSON.json",shop.getFruitStorage());
+        shop.save("files/SavedJSON.json",shop.getFruitStorage());
         System.out.println("shop after selling:");
         shop.show(shop.getFruitStorage());
         System.out.println("Clients left" + clients.getClients());
